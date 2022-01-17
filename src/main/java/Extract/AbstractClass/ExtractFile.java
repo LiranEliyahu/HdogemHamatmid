@@ -21,6 +21,5 @@ public abstract class ExtractFile {
 
     protected BufferedReader getFile() throws FileNotFoundException{
         return new BufferedReader(new FileReader(getPath()));
-
     }
 }
