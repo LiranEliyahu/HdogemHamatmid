@@ -1,4 +1,4 @@
-package Parse.Parser;
+package Parse.AbstractClass;
 
 public abstract class Parser{
     private String targetPath;
