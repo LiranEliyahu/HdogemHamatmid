@@ -1,2 +1,4 @@
-package Parse.Parser;public class Parser {
+package Parse.Parser;
+
+public class Parser {
 }
