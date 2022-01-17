@@ -1,18 +1,26 @@
 package Extract.AbstractClass;
 
-public abstract class Parser {
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.IOException;
+
+public abstract class ExtractFile {
     private String path;
 
-    public void setPath(String path) {
+    protected void setPath(String path) throws IOException {
         this.path = path;
+        extractInfo();
     }
 
-    public String getPath() {
+    protected String getPath() {
         return path;
     }
 
+    protected abstract void extractInfo() throws IOException;
 
-    public Parser(String path){
-        setPath(path);
+    protected BufferedReader getFile() throws FileNotFoundException{
+        return new BufferedReader(new FileReader(getPath()));
+
     }
 }
