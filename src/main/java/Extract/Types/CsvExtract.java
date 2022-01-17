@@ -8,7 +8,12 @@ import Extract.AbstractClass.ExtractFile;
 public class CsvExtract extends ExtractFile {
     private Stack<String[]> lines;
 
-    public Stack<String[]> getLines() {
+    public CsvExtract(String path) throws IOException {
+        setPath(path);
+        extractInfo();
+    }
+
+    protected Stack<String[]> getLines() {
         return lines;
     }
 
