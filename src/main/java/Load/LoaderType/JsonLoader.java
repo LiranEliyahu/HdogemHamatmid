@@ -1,4 +1,4 @@
-package Load.JsonLoader;
+package Load.LoaderType;
 
 import Load.Interface.Loader;
 import Parse.ParserType.ParseToJson;
