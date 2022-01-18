@@ -1,4 +1,4 @@
-package Parse.Enum.Fields;
+package Parse.Enum;
 
 public enum Fields {
     MDACODE("MDACODE"),
@@ -14,9 +14,9 @@ public enum Fields {
     TAKEDATE("TakeDate"),
     RESULTDATE("ResultDate");
 
-    private String field;
+    private final String field;
 
-    private Fields (String value) {
+    Fields (String value) {
         this.field = value;
     }
 
