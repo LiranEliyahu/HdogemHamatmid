@@ -1,34 +1,43 @@
 package Parse.ParserType;
 
-import Parse.AbstractClass.Parser;
+import Extract.Types.CsvExtract;
+import Parse.Interface.Parser;
+import Parse.Enum.Fields;
 import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
 import java.io.IOException;
 
-public class ParseToJson extends Parser {
-    private JSONArray tests;
-    private final int limit = 50000;
+public class ParseToJson implements Parser{
+    private final JSONArray tests = new JSONArray();
 
-    protected int getLimit() {
-        return limit;
+    //cTor
+    public ParseToJson(String path) throws IOException {
+        parseData(new CsvExtract(path));
     }
+
+    //getter
     public JSONArray getTests() {
         return tests;
     }
 
-    public ParseToJson(String targetPath, String path) throws IOException {
-        super(path);
-        setTargetPath(targetPath);
+    @Override
+    public void parseData(CsvExtract newStack) {
+        int caseNumber = 1;
+        while(!newStack.getLines().isEmpty()){
+            getTests().add(organizer(newStack.getLines().pop(), caseNumber));
+            caseNumber++;
+        }
     }
 
-    @Override
-    protected void parseData() {
+    private JSONObject organizer(String[] line, int current){
+        JSONObject info = new JSONObject();
+        JSONObject testNumber = new JSONObject();
 
-        while(!getLines().isEmpty()){
-            for (int i = 0; i < getLimit(); i++) {
-                getLines().pop();
-            }
+        for (int i = 0; i < line.length; i++) {
+             info.put(Fields.values()[i].getField(), line[i]);
         }
 
-        getLines();
+        testNumber.put("test_" + current,info);
+        return testNumber;
     }
 }
