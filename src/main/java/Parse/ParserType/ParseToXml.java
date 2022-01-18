@@ -38,7 +38,7 @@ public class ParseToXml implements Parser {
             Document d = getNewDoc();
 
             for (int i = 0; i < getLimit() && (!csvStack.getLines().isEmpty()); i++) {
-                d.appendChild(getXmlElment(d, csvStack.getLines().pop()));
+                d.appendChild(getXmlElement(d, csvStack.getLines().pop()));
             }
             getDocStack().push(d);
         }
@@ -50,7 +50,7 @@ public class ParseToXml implements Parser {
         return docBuilder.newDocument();
     }
 
-    private Element getXmlElment(Document d, String[] line){
+    private Element getXmlElement(Document d, String[] line){
         Element e = d.createElement("labTest");
 
         for (int i = 0; i < line.length; i++) {
