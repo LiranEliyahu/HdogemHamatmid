@@ -1,5 +1,8 @@
 package Load.AbstractClass;
 
+import health_care_provider.errors.InvalidIdException;
+import javax.xml.parsers.ParserConfigurationException;
+import javax.xml.transform.TransformerException;
 import java.io.IOException;
 
 public abstract class Loader {
@@ -20,5 +23,6 @@ public abstract class Loader {
         this.target = target;
     }
 
-    public abstract void LoadToDir() throws IOException;
+    public abstract void LoadToDir()
+            throws IOException, ParserConfigurationException, TransformerException, InvalidIdException;
 }
