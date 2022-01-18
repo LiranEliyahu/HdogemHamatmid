@@ -1,6 +1,6 @@
 package Parse.Enum;
 
-public enum Fields {
+public enum FieldsOfStageA {
     MDACODE("MDACODE"),
     IDNUM("IDNum"),
     IDTYPE("IDType"),
@@ -16,7 +16,7 @@ public enum Fields {
 
     private final String field;
 
-    Fields (String value) {
+    FieldsOfStageA(String value) {
         this.field = value;
     }
 
