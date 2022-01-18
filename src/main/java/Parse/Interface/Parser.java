@@ -1,6 +1,7 @@
-package Parse.AbstractClass;
+package Parse.Interface;
 
+import Extract.Types.CsvExtract;
 
-public abstract class Parser {
-    protected abstract void parseData();
+public interface Parser {
+    void parseData(CsvExtract newStack);
 }
