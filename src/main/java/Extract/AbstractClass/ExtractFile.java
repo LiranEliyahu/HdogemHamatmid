@@ -8,9 +8,8 @@ import java.io.IOException;
 public abstract class ExtractFile {
     private String path;
 
-    protected void setPath(String path) throws IOException {
+    protected void setPath(String path) {
         this.path = path;
-        extractInfo();
     }
 
     protected String getPath() {
