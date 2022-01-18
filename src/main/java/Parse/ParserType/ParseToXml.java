@@ -106,20 +106,3 @@ public class ParseToXml implements Parser {
         return e;
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
